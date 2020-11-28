@@ -45,6 +45,8 @@ class Game {
 
     Player.getPlayerInfo();
     
+    player.getCarsatend();
+
     if(allPlayers !== undefined){ //GAME STARTS
       background(0);
       image(track,0,-displayHeight*4,displayWidth,displayHeight*5);
@@ -83,6 +85,8 @@ class Game {
 
     if(player.distance>=3750){
       gameState = 2;
+      player.rank = player.rank+1
+      Player.updateCarsatend(player.rank);
     }
 
     drawSprites();
@@ -90,6 +94,7 @@ class Game {
 
   end(){
     console.log("gameended")
+    console.log(player.rank)
   }
 
 }
